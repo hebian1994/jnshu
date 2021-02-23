@@ -36,7 +36,7 @@ public class JnshuMybatisTest {
             List maps3=empOperation.findAll();
             for(int i=0;i<maps3.size();i++){
                 Jnshu jnshu= (Jnshu) maps3.get(i);
-                System.out.println(jnshu.getName()+jnshu.getStudentNumber());
+                System.out.println(jnshu.getName()+ jnshu.getQq()+jnshu.getDailyLink()+jnshu.getIntending()+ jnshu.getWhereToLearnAboutTheJnshu()+jnshu.getType()+ jnshu.getTutor()+jnshu.getGraduatedFrom()+jnshu.getExpectedAdmissionTime());
             }
             session.commit();
         } finally {

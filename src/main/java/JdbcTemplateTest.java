@@ -27,16 +27,16 @@ public class JdbcTemplateTest {
 //       //格式化当前日期
 //        String d=SimpleDateFormat.format(current_date.getTime());
         //插入测试
-      String sql="insert into jnshu (name,qq,type,Tutor,Expected_admission_time,Graduated_from,Student_number,Daily_link,Intending,Where_to_learn_about_the_JNSHU) values (?,?,?,?,?,?,?,?,?,?);";
-      template.update(sql,"马化腾",911911,"JAVA后端","马云",null,"深圳大学",666,"www.baidu.com","一统天下","弹窗网站");
+//      String sql="insert into jnshu (name,qq,type,Tutor,Expected_admission_time,Graduated_from,Student_number,Daily_link,Intending,Where_to_learn_about_the_JNSHU) values (?,?,?,?,?,?,?,?,?,?);";
+//      template.update(sql,"马化腾",911911,"JAVA后端","马云",null,"深圳大学",666,"www.baidu.com","一统天下","弹窗网站");
 
 //       /*修改数据根据学号改名字*/
 //        String sqlx="UPDATE jnshu SET name ="+"'秦始皇'"+" WHERE Student_number = 666";
 //        template.update(sqlx);
 //
 //        /*查询所有并返回结果*/
-//       String sql2="select * from jnshu";
-//       List<Map<String, Object>> maps = template.queryForList(sql2);        System.out.println(maps);
+       String sql2="select * from jnshu";
+      List<Map<String, Object>> maps = template.queryForList(sql2);        System.out.println(maps);
         //条件查询
 //        String sql1="select * from jnshu where  Student_number = 666";
 //        List<Map<String, Object>> maps1 = template.queryForList(sql1);
