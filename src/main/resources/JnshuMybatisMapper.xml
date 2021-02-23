@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.ldj.dao.JnshuMybatisDao">
+
+    <select id="findAll" resultType="Jnshu">select * from jnshu</select>
+    <!-- 根据学号查询学生信息-->
+    <select id="findByStudentNumber" resultType="Jnshu"  parameterType="INT">
+        select * from jnshu where Student_number = #{StudentNumber};
+    </select>
+    <!--新增学生-->
+    <insert id="doCreate" parameterType="Jnshu">
+          insert into jnshu (name,qq,type,Tutor,Expected_admission_time,Graduated_from,Student_number,Daily_link,Intending,Where_to_learn_about_the_JNSHU) values (#{name},#{qq},#{type},#{tutor},#{expectedAdmissionTime},#{graduatedFrom},#{studentNumber},#{dailyLink},#{intending},#{whereToLearnAboutTheJnshu});
+    </insert>
+    <!--更新数据-->
+    <update id="doUpdate" parameterType="Jnshu" >
+        update jnshu set name = #{name} ,qq=#{qq},type=#{type},Tutor=#{tutor},Expected_admission_time=#{expectedAdmissionTime},Graduated_from=#{graduatedFrom},Student_number=#{studentNumber},Daily_link=#{dailyLink},Intending=#{intending},Where_to_learn_about_the_JNSHU=#{whereToLearnAboutTheJnshu} where Student_number =#{studentNumber} ;
+    </update>
+    <!--删除数据-->
+    <delete id="doRemove" parameterType="INT">
+        delete  from jnshu where Student_number = #{studentNumber};
+    </delete>
+
+</mapper>
